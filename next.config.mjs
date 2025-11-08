@@ -8,6 +8,10 @@ const nextConfig = {
         hostname: "localhost",
       },
       {
+        protocol: "http",
+        hostname: "http://15.45.235:3003",
+      },
+      {
         protocol: "https",
         hostname: "www.flaticon.com",
       },
