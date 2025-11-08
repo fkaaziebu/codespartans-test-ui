@@ -66,8 +66,7 @@ export default function StatsPage() {
   const courseId = pathname.split("/")[pathname.split("/").length - 6];
   const suiteId = pathname.split("/")[pathname.split("/").length - 4];
   const attemptId = pathname.split("/")[pathname.split("/").length - 2];
-  // const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const baseUrl = "http://localhost:3004/v1";
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL_SIMULATION;
 
   const getTestSuiteAttemptStat = async (
     retryCount = 0,

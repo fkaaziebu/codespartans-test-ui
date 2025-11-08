@@ -59,8 +59,7 @@ export default function LiveAttemptPage() {
   const totalQuestions = Number(searchParams.get("totalQuestions"));
   const suiteId = pathname.split("/")[pathname.split("/").length - 3];
   const attemptId = pathname.split("/").pop();
-  // const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const baseUrl = "http://localhost:3004/v1";
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL_SIMULATION;
   const [questionList, setQuestionList] = useState<Array<number>>([]);
   const [allAttemptedQuestions, setAllAttemptedQuestions] = useState<
     Array<AllAttemptedQuestionsInterface>

@@ -17,8 +17,8 @@ export default function AccountSettingsLayout({
 
   const router = useRouter();
   const pathname = usePathname();
-  // const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const baseUrl = "http://localhost:3007/v1";
+
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL_AUTH;
 
   const getProfile = async () => {
     try {

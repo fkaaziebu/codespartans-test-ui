@@ -29,8 +29,9 @@ export default function Profile() {
     role: "",
     email: "",
   });
-  // const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const baseUrl = "http://localhost:3007/v1";
+
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL_AUTH;
+
   const getProfile = async () => {
     try {
       const result = await axios.get(`${baseUrl}/auth/students/profile`, {

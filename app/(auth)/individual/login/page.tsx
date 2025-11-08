@@ -50,8 +50,7 @@ export default function IndividualLogin() {
     },
   });
 
-  // const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const baseUrl = "http://localhost:3007/v1";
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL_AUTH;
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {

@@ -31,8 +31,9 @@ export default function CartPage() {
   const [currentCourseRemoving, setCurrentCourseRemoving] = useState<number>(0);
 
   const router = useRouter();
-  // const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const baseUrl = "http://localhost:3006/v1";
+
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL_INVENTORY;
+
   const getUserCart = async () => {
     try {
       setIsLoadingCart(true);

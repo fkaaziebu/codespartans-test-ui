@@ -38,8 +38,7 @@ export default function TestSuiteAttemptsPage() {
   const courseId = pathname.split("/")[pathname.split("/").length - 4];
   const suiteId = pathname.split("/")[pathname.split("/").length - 2];
   const totalQuestions = searchParams.get("totalQuestions");
-  // const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const baseUrl = "http://localhost:3004/v1";
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL_SIMULATION;
   const { resetUserFinished } = useFinishAttemptBannerUpdate();
 
   const getTestSuiteAttempts = async () => {

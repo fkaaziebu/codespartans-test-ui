@@ -25,8 +25,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 const MAX_TRIAL_QUESTIONS = 5;
 
 export default function TrialPage() {
-  // const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const baseUrl = "http://localhost:3006/v1";
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL_INVENTORY;
   const [isLoading, setIsLoading] = useState(true);
   const [loadingError, setLoadingError] = useState(false);
   const pathname = usePathname();

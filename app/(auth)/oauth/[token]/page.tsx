@@ -9,8 +9,7 @@ export default function OauthPage() {
   const pathname = usePathname();
   const router = useRouter();
 
-  // const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const baseUrl = "http://localhost:3007/v1";
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL_AUTH;
 
   const oauthLogin = async () => {
     const token = pathname.split("/").pop();

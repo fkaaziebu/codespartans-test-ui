@@ -58,8 +58,7 @@ export default function TestSuitesPage() {
   const [testId, setTestId] = useState("");
   const router = useRouter();
   const pathname = usePathname();
-  // const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const baseUrl = "http://localhost:3004/v1";
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL_SIMULATION;
   const INACTIVITY_TIMEOUT = 50000;
 
   const resetInactivityTimer = useCallback(() => {

@@ -1,6 +1,7 @@
 "use client";
 import axios from "axios";
 import { LoaderCircle, LogIn, MailPlus } from "lucide-react";
+import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -23,8 +24,7 @@ export default function ConsentPage() {
 
 function Page() {
   const router = useRouter();
-  // const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const baseUrl = "http://localhost:3007/v1";
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL_AUTH;
   const searchParams = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -95,13 +95,13 @@ function Page() {
 
         <p className="text-center text-xs text-gray-500">
           By signing up, I agree to the Codespartans{" "}
-          <a href="#" className="text-gray-900 underline">
+          <Link href="#" className="text-gray-900 underline">
             Terms of Service
-          </a>{" "}
+          </Link>{" "}
           and acknowledge that the{" "}
-          <a href="#" className="text-gray-900 underline">
+          <Link href="#" className="text-gray-900 underline">
             Privacy Statement
-          </a>{" "}
+          </Link>{" "}
           applies.
         </p>
       </CardContent>

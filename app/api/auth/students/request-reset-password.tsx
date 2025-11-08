@@ -1,7 +1,6 @@
 import axios from "axios";
 
-// const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-const baseUrl = "http://localhost:3007/v1";
+const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL_AUTH;
 
 export const requestResetPassword = async (email: string) => {
   try {

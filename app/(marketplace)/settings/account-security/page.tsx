@@ -25,8 +25,7 @@ export default function AccountSecurity() {
     email: "",
   });
   const router = useRouter();
-  // const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const baseUrl = "http://localhost:3007/v1";
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL_AUTH;
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
