@@ -1,5 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    NEXT_PUBLIC_API_BASE_URL_AUTH: process.env.NEXT_PUBLIC_API_BASE_URL_AUTH,
+    NEXT_PUBLIC_API_BASE_URL_INVENTORY:
+      process.env.NEXT_PUBLIC_API_BASE_URL_INVENTORY,
+    NEXT_PUBLIC_API_BASE_URL_SIMULATION:
+      process.env.NEXT_PUBLIC_API_BASE_URL_SIMULATION,
+    NEXT_PUBLIC_API_BASE_URL_UPLOAD:
+      process.env.NEXT_PUBLIC_API_BASE_URL_UPLOAD,
+  },
   output: "standalone",
   images: {
     remotePatterns: [
