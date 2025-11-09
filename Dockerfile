@@ -13,10 +13,10 @@ FROM node:20-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-ENV NEXT_PUBLIC_API_BASE_URL_AUTH=http://ec2-3-66-190-132.eu-central-1.compute.amazonaws.com:3000/v1
-ENV NEXT_PUBLIC_API_BASE_URL_INVENTORY=http://ec2-3-66-190-132.eu-central-1.compute.amazonaws.com:3001/v1
-ENV NEXT_PUBLIC_API_BASE_URL_SIMULATION=http://ec2-3-66-190-132.eu-central-1.compute.amazonaws.com:3002/v1
-ENV NEXT_PUBLIC_API_BASE_URL_UPLOAD=http://ec2-3-66-190-132.eu-central-1.compute.amazonaws.com:3003/v1
+ENV NEXT_PUBLIC_API_BASE_URL_AUTH=http://ec2-3-76-36-58.eu-central-1.compute.amazonaws.com:3000/v1
+ENV NEXT_PUBLIC_API_BASE_URL_INVENTORY=http://ec2-3-76-36-58.eu-central-1.compute.amazonaws.com:3001/v1
+ENV NEXT_PUBLIC_API_BASE_URL_SIMULATION=http://ec2-3-76-36-58.eu-central-1.compute.amazonaws.com:3002/v1
+ENV NEXT_PUBLIC_API_BASE_URL_UPLOAD=http://ec2-3-76-36-58.eu-central-1.compute.amazonaws.com:3003/v1
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 

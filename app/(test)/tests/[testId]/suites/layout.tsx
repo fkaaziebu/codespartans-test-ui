@@ -41,7 +41,7 @@ export default function TestSuiteLayout({
 
   const initializeSocket = useCallback(() => {
     const socket = io(
-      "http://ec2-3-66-190-132.eu-central-1.compute.amazonaws.com:3002",
+      "http://ec2-3-76-36-58.eu-central-1.compute.amazonaws.com:3002",
       {
         transports: ["websocket"],
         reconnection: true,
