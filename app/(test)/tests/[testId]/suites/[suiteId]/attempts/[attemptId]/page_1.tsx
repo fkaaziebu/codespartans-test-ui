@@ -146,7 +146,7 @@ export default function LiveAttemptPage() {
 
   const initializeSocket = useCallback(() => {
     const socket = io(
-      "http://ec2-35-159-97-13.eu-central-1.compute.amazonaws.com:3002",
+      "http://ec2-3-66-190-132.eu-central-1.compute.amazonaws.com:3002",
       {
         transports: ["websocket"],
         reconnection: true,
