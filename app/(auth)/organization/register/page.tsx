@@ -63,7 +63,8 @@ export default function OrganizationalRegistration() {
     // Do something with the form values
     const { workEmail, location, companyName, password } = values;
     const adminName = values.firstName + " " + values.lastName;
-    const organizationLogo = "http://3.73.36.150:3003/v1/image.png";
+    const organizationLogo =
+      "http://ec2-35-159-97-13.eu-central-1.compute.amazonaws.com:3003/v1/image.png";
 
     try {
       const userData = {

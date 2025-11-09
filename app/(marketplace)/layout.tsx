@@ -137,13 +137,16 @@ export default function TestSuiteLayout({
 
   // const searchParams = useSearchParams();
   const initializeSocket = useCallback(() => {
-    const socket = io("http://3.73.36.150:3002", {
-      transports: ["websocket"],
-      reconnection: true,
-      reconnectionDelay: 1000,
-      reconnectionDelayMax: 5000,
-      reconnectionAttempts: 5,
-    });
+    const socket = io(
+      "http://ec2-35-159-97-13.eu-central-1.compute.amazonaws.com:3002",
+      {
+        transports: ["websocket"],
+        reconnection: true,
+        reconnectionDelay: 1000,
+        reconnectionDelayMax: 5000,
+        reconnectionAttempts: 5,
+      },
+    );
 
     socket.on("connect", () => {
       const userId = sessionStorage.getItem("userId");
