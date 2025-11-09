@@ -105,7 +105,7 @@ export default function LiveAttemptPage() {
 
   // actions
   const initializeSocket = useCallback(() => {
-    const socket = io("http://localhost:3004", {
+    const socket = io("http://3.73.36.150:3002", {
       transports: ["websocket"],
       reconnection: true,
       reconnectionDelay: 1000,

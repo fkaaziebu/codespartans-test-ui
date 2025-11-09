@@ -137,7 +137,7 @@ export default function TestSuiteLayout({
 
   // const searchParams = useSearchParams();
   const initializeSocket = useCallback(() => {
-    const socket = io("http://localhost:3004", {
+    const socket = io("http://3.73.36.150:3002", {
       transports: ["websocket"],
       reconnection: true,
       reconnectionDelay: 1000,
@@ -291,14 +291,11 @@ export default function TestSuiteLayout({
 
   const getUserProfile = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:3007/v1/auth/students/profile`,
-        {
-          headers: {
-            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-          },
+      const response = await axios.get(`${baseUrl}/auth/students/profile`, {
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
         },
-      );
+      });
 
       setProfile(response.data);
       sessionStorage.setItem("userId", response.data.id);

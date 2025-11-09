@@ -88,7 +88,7 @@ export default function LearningPage() {
     try {
       setIsCourseStatusLoading(true);
       const response = await axios.post(
-        `http://localhost:3004/simulation/courses/status`,
+        `http://3.73.36.150:3002/v1/simulation/courses/status`,
         { courseIds: ids },
         {
           headers: {

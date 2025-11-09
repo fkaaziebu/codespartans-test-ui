@@ -175,14 +175,11 @@ function ActualHomePage() {
 
   const getUserProfile = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:3007/v1/auth/students/profile`,
-        {
-          headers: {
-            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-          },
+      const response = await axios.get(`${baseUrl}/auth/students/profile`, {
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
         },
-      );
+      });
 
       setProfile(response.data);
     } catch (error) {

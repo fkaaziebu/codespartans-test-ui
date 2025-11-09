@@ -1,10 +1,14 @@
 "use client";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
+import { registerOrganization } from "@/app/api/auth";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
 import {
   Form,
   FormControl,
@@ -13,7 +17,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-
+import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -21,18 +25,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
-import LoginSvg from "@/public/images/secure-login.svg";
-
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
 import { cn } from "@/lib/utils";
-
-import { useRouter } from "next/navigation";
-import { registerOrganization } from "@/app/api/auth";
+import LoginSvg from "@/public/images/secure-login.svg";
 
 const formSchema = z.object({
   firstName: z.string().min(2, "First name is required"),
@@ -69,7 +63,7 @@ export default function OrganizationalRegistration() {
     // Do something with the form values
     const { workEmail, location, companyName, password } = values;
     const adminName = values.firstName + " " + values.lastName;
-    const organizationLogo = "http://localhost:3000/image.png";
+    const organizationLogo = "http://3.73.36.150:3003/v1/image.png";
 
     try {
       const userData = {
@@ -100,17 +94,17 @@ export default function OrganizationalRegistration() {
   }
 
   return (
-    <div className="mx-auto max-w-screen-xl grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+    <div className="mx-auto grid max-w-screen-xl grid-cols-1 items-center gap-8 lg:grid-cols-5">
       {/* Image Section - hidden on small screens */}
-      <div className="hidden lg:block lg:col-span-2">
+      <div className="hidden lg:col-span-2 lg:block">
         <Image src={LoginSvg} alt="Register svg image" />
       </div>
 
       {/* Form Section - spans 3 columns on larger screens */}
       <div className="lg:col-span-2">
-        <Card className="border-0 shadow-none w-[450px]">
+        <Card className="w-[450px] border-0 shadow-none">
           <CardHeader>
-            <CardTitle className="text-3xl text-center leading-[2.5rem]">
+            <CardTitle className="text-center text-3xl leading-[2.5rem]">
               Register Your Organization
             </CardTitle>
           </CardHeader>
@@ -118,20 +112,20 @@ export default function OrganizationalRegistration() {
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="w-full flex flex-col gap-4"
+                className="flex w-full flex-col gap-4"
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <FormField
                     control={form.control}
                     name="firstName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="font-bold mb-2">
+                        <FormLabel className="mb-2 font-bold">
                           First Name *
                         </FormLabel>
                         <FormControl>
                           <Input
-                            className="border-gray-500 py-6 rounded-none"
+                            className="rounded-none border-gray-500 py-6"
                             type="text"
                             id="firstname"
                             onFocus={() => setErrorMessage("")}
@@ -147,12 +141,12 @@ export default function OrganizationalRegistration() {
                     name="lastName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="font-bold mb-2">
+                        <FormLabel className="mb-2 font-bold">
                           Last Name *
                         </FormLabel>
                         <FormControl>
                           <Input
-                            className="border-gray-500 py-6 rounded-none"
+                            className="rounded-none border-gray-500 py-6"
                             type="text"
                             onFocus={() => setErrorMessage("")}
                             {...field}
@@ -168,12 +162,12 @@ export default function OrganizationalRegistration() {
                   name="workEmail"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="font-bold mb-2">
+                      <FormLabel className="mb-2 font-bold">
                         Work Email *
                       </FormLabel>
                       <FormControl>
                         <Input
-                          className="border-gray-500 py-6 rounded-none"
+                          className="rounded-none border-gray-500 py-6"
                           type="text"
                           onFocus={() => setErrorMessage("")}
                           {...field}
@@ -189,7 +183,7 @@ export default function OrganizationalRegistration() {
                   name="location"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="font-bold mb-2">
+                      <FormLabel className="mb-2 font-bold">
                         Where are you located? *
                       </FormLabel>
                       <Select
@@ -215,12 +209,12 @@ export default function OrganizationalRegistration() {
                   name="companyName"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="font-bold mb-2">
+                      <FormLabel className="mb-2 font-bold">
                         Company Name *
                       </FormLabel>
                       <FormControl>
                         <Input
-                          className="border-gray-500 py-6 rounded-none"
+                          className="rounded-none border-gray-500 py-6"
                           type="text"
                           id="companyname"
                           onFocus={() => setErrorMessage("")}
@@ -236,12 +230,12 @@ export default function OrganizationalRegistration() {
                   name="password"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="font-bold mb-2">
+                      <FormLabel className="mb-2 font-bold">
                         Password *
                       </FormLabel>
                       <FormControl>
                         <Input
-                          className="border-gray-500 py-6 rounded-none"
+                          className="rounded-none border-gray-500 py-6"
                           type="password"
                           id="password"
                           onFocus={() => setErrorMessage("")}
@@ -254,7 +248,7 @@ export default function OrganizationalRegistration() {
                 />
 
                 {errorMessage && (
-                  <div className="px-4 py-1 bg-red-50 text-red-800 rounded-lg text-sm">
+                  <div className="rounded-lg bg-red-50 px-4 py-1 text-sm text-red-800">
                     {errorMessage}
                   </div>
                 )}
@@ -262,15 +256,15 @@ export default function OrganizationalRegistration() {
                   disabled={loading}
                   type="submit"
                   className={cn(
-                    "w-full bg-gray-800 text-white mt-4 hover:bg-gray-950",
-                    loading && "bg-gray-500 hover:bg-gray-600"
+                    "mt-4 w-full bg-gray-800 text-white hover:bg-gray-950",
+                    loading && "bg-gray-500 hover:bg-gray-600",
                   )}
                 >
                   {loading ? "Registering..." : "Register"}
                 </Button>
               </form>
             </Form>
-            <p className="mt-4 text-xs text-center text-gray-500">
+            <p className="mt-4 text-center text-xs text-gray-500">
               By signing up, you agree to our{" "}
               <Link href="#" className="text-purple-600 hover:underline">
                 Terms of Use

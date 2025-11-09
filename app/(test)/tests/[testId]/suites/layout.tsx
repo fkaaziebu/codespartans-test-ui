@@ -1,10 +1,10 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import { Clock, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
+import { Button } from "@/components/ui/button";
 import { useFinishAttemptBannerUpdate } from "@/hooks/use-action-store";
 
 export default function TestSuiteLayout({
@@ -40,7 +40,7 @@ export default function TestSuiteLayout({
   }, []);
 
   const initializeSocket = useCallback(() => {
-    const socket = io("http://localhost:3004", {
+    const socket = io("http://3.73.36.150:3002", {
       transports: ["websocket"],
       reconnection: true,
       reconnectionDelay: 1000,
