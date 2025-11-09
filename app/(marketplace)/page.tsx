@@ -175,6 +175,7 @@ function ActualHomePage() {
 
   const getUserProfile = async () => {
     try {
+      const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL_AUTH;
       const response = await axios.get(`${baseUrl}/auth/students/profile`, {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,
