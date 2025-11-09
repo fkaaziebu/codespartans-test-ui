@@ -18,7 +18,7 @@ const nextConfig = {
       },
       {
         protocol: "http",
-        hostname: "http://15.45.235:3003",
+        hostname: "ec2-3-76-36-58.eu-central-1.compute.amazonaws.com",
       },
       {
         protocol: "https",
